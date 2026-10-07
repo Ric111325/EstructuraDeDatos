@@ -9,6 +9,7 @@ using namespace std;
 
 class olist{
 
+public:
     class node {
 
         int dat ;
@@ -24,6 +25,7 @@ class olist{
         
     };
 
+private:
 
     node *start;
 
@@ -35,13 +37,20 @@ public:
     olist(int);
     ~olist();
     
+    void ins(int);
+
+    bool membresia(int); // Consulta por membresia, devuelve true o false si el dato esta o no en la lista
+    node *referencia(int); // Consulta por referencia, devuelve la direccion del nodo
+    int copia(int); // Consulta por copia, devuelve el dato del nodo
+    bool convento(int, int &); // Consulta por membresia mas copia, devuelve true o false si el dato esta o no en la lista y si esta devuelve el dato del nodo    
+
+
     int capacity () const { return n;}
     int size() const {return s;}
 
     bool full() {return n == s;}
     bool empty() {return s == 0;}
-
-    void ins(int);
+    
     void print();
 };
 

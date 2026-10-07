@@ -23,7 +23,7 @@ void olist::ins(int x) {
     node *p = start;
     node *q = nullptr;
 
-    while (p != nullptr && p -> data() < x) {
+    while (p != nullptr and p -> data() < x) {
        
         q = p;
         p = p -> next();
@@ -49,11 +49,52 @@ void olist::ins(int x) {
     s++;
 }
 
+bool olist::membresia(int x) {
+    node *p = start;
+
+    while (p != nullptr and p -> data() < x) p = p -> next();
+
+    return (p != nullptr and p -> data() == x);
+}
+
+olist::node *olist::referencia(int x) {
+    node *p = start;
+
+    while (p != nullptr and p -> data() < x) p = p -> next();
+
+    return (p != nullptr and p -> data() == x) ? p : nullptr;
+}
+
+int olist::copia(int x) {
+    node *p = start;
+
+    while (p != nullptr and p -> data() < x) p = p -> next();
+
+    return (p != nullptr and p -> data() == x) ? p -> data() : -1;
+}
+
+bool olist::convento(int x, int &c) {
+    node *p = start;
+
+    while (p != nullptr and p -> data() < x) p = p -> next();
+
+    if (p != nullptr and p -> data() == x) {
+       c = p -> data();
+        return true;
+    } 
+    
+    return false;
+}
+
 void olist::print() {
     node *p = start;
+
+    cout << "[ ";
 
     while (p != nullptr) {
         cout << p -> data() << " ";
         p = p -> next();
     }
+    cout << "]" << endl;
 }
+
