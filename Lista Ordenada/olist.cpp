@@ -86,6 +86,26 @@ bool olist::convento(int x, int &c) {
     return false;
 }
 
+void olist::del(int x) {
+    node *p = start;
+    node *q = nullptr;
+
+    while (p != nullptr and p -> data() < x) {
+        q = p;
+        p = p -> next();
+    }
+
+    if (p != nullptr and p -> data() == x) {
+        if (p == start) {
+            start = start -> next();
+        } else {
+            q -> next(p -> next());
+        }
+        delete p;
+        s--;
+    }
+}
+
 void olist::print() {
     node *p = start;
 

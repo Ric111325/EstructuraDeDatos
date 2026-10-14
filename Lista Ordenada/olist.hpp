@@ -44,6 +44,7 @@ public:
     int copia(int); // Consulta por copia, devuelve el dato del nodo
     bool convento(int, int &); // Consulta por membresia mas copia, devuelve true o false si el dato esta o no en la lista y si esta devuelve el dato del nodo    
 
+    void del(int); // Elimina un nodo de la lista
 
     int capacity () const { return n;}
     int size() const {return s;}

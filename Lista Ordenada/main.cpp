@@ -49,5 +49,5 @@ int main(int argc, char const *argv[]){
 
 }
 
-// Faltamplementar el hecho de que se inserten datos duplicados, en caso de eso no insertarlo y tampoco agrandar el tamaño de la lista
+// Falta implementar el hecho de que se inserten datos duplicados, en caso de eso no insertarlo y tampoco agrandar el tamaño de la lista
 
