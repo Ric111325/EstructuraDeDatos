@@ -3,7 +3,7 @@
 using namespace std;
 
 
-/*long fibo (int i){
+long fibo (int i){
 
    
 
@@ -11,7 +11,7 @@ using namespace std;
     else return fibo(i-2) + fibo (i-1);
 
 }
-*/
+
 
 long fibo_c(int i){
 
@@ -37,9 +37,10 @@ long fibo_c(int i){
 int main(int argc, char const *argv[])
 {
     
-    /*for (int i = 1; i < 100; i++){
+    for (int i = 1; i < 100; i++){
         cout << i << " " << fibo_c(i)<< endl;
-    }*/
+    }
+
     
 
     return 0;
