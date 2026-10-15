@@ -52,13 +52,12 @@ void heap::ext(){
         }
         else break;
     }
-}
+} // Esto esta con IA, pero pidio hacerlo
+
 void print(){
     
     cout << "[ ";
     
-
-
     for(int i = 0; i < s; i++) cout << a[i] << " ";
     cout <<"]" << endl;
 }
