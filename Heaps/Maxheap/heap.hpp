@@ -25,7 +25,7 @@ public:
     ~heap();
 
     void ins(int);
-
+    void ext();
 
     int capacity () const { return n;}
     int size() const {return s;}

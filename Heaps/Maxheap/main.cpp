@@ -13,7 +13,9 @@ int main(int argc, char const *argv[]){
 
         int x = rand() % 100;
 
-        
+        cout << x << " ";
+        h.ins(x);
+        h.print();   
     }
     
 
