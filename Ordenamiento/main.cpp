@@ -42,7 +42,7 @@ int max(int *a, int n){ //Busqueda del maximo o del minimo
     return k;
 }
 
-void order (int *a, int n){ //Ordenar del arreglo
+void selection (int *a, int n){ //Algoritmo de seleccion
 
     while (n > 1){
 
@@ -73,7 +73,7 @@ int main(int argc, char const *argv[]){
     cout << "El esfuerzo fue: " << contador << endl;
     */
 
-    order (a,n);
+    selection (a,n);
     print(a,n);
     
     cout << "El esfuerzo fue: " << contador << endl;
