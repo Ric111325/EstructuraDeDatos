@@ -16,7 +16,10 @@ Dstack::Dstack(int cap){
 }
 
 Dstack::~Dstack(){
-
+    while (!empty()){
+        pop();
+    }
+    
 }
 
 void Dstack::push(char x){

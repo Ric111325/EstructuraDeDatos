@@ -10,16 +10,16 @@ class Dstack{
 
     class node {
 
-        int dat ;
+        char dat ;
         node *nxt;
 
     public:
         
         node(char);
 
-        node *next() const { return nxt;} //Getter que devuelve la direccion de un nodo     //  Getter para el apuntador
-        void next (node *p) { nxt = p;} // Setter que guarda la direccion en el nodo        //  Setter para el apuntador
-        int data() const {return dat;} //Getter que devuevle la info del nodo               //  Getter para el dato
+        node *next() const { return nxt;} //Getter que devuelve la direccion de un nodo     
+        void next (node *p) { nxt = p;} // Setter que guarda la direccion en el nodo        
+        char data() const {return dat;} //Getter que devuevle la info del nodo               
         
     };
 

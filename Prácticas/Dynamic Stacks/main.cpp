@@ -12,7 +12,6 @@ void clean(string &s){
     s.erase(remove(s.begin(), s.end(), ' '), s.end());
 
     //Transformar mayusculas a minusculas
-
     std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ 
 
         return std::tolower(c);
@@ -24,7 +23,6 @@ bool ispal(string &s){
 
     Dstack pila((int)s.length());
 
-    // Prueba
     for (int i = 0; i < s.length(); i++) pila.push(s[i]);
     
     int i = 0;
@@ -49,8 +47,8 @@ int main(int argc, char const *argv[]){
     clean(frase);
 
 
-    if (ispal(frase)) cout << "\nEs palindromo" << endl;
-    else cout << "\nNo es palindromo" << endl ; 
+    if (ispal(frase)) cout << "Es palindromo" << endl;
+    else cout << "No es palindromo" << endl ; 
 
 
     return 0;
