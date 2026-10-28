@@ -32,7 +32,7 @@ int main(int argc, const char *argv[]){
 
     }
     
-/* Prueba de que funciona
+ // Prueba de que funciona
     while (!pila.full()){
         int x = rand() % 100 + 1;
 
@@ -52,7 +52,7 @@ int main(int argc, const char *argv[]){
         cout << x << " ";
         pila.print();
     }
-    */
+    
 
     return 0;
 }
