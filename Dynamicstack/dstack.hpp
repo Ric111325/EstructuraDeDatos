@@ -44,7 +44,7 @@ public:
     bool full() {return n == s;}
     bool empty() {return s == 0;}
 
-    //Solo es para testear, ver que hay en la pila
+    //Ver que hay en la pila
 
     void print();
 
