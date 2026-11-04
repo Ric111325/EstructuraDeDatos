@@ -15,9 +15,9 @@ struct trabajo {
 
 class Queue{
 
-    int n; //Capacidad
-    int s; //Tamaño
-    trabajo buffer[5]; // Buffer circular 
+    int n; 
+    int s; 
+    trabajo buffer[5]; 
 
     int front;
     int rear;
