@@ -31,7 +31,7 @@ int main(int argc, const char *argv[]){
                 cin >> t.id;
                 cin.ignore(); 
 
-                cout << "Nombre del dueño: ";
+                cout << "Nombre del propietario: ";
                 cin >> t.owner;
                 //getline(cin, t.owner);
 

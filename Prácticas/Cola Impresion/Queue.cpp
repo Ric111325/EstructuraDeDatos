@@ -37,7 +37,8 @@ void Queue::dequeue(){
         return;
     }
 
-    cout << "ID: " << buffer[front].id << "\nDueño: " << buffer[front].owner << "\nPaginas: " << buffer[front].pages << endl;
+    cout<< "\nImprimiendo:" << endl;
+    cout << "ID: " << buffer[front].id << "\nPropietario: " << buffer[front].owner << "\nPaginas: " << buffer[front].pages << endl;
     
     front = forth(front);
     s--;
@@ -51,13 +52,22 @@ void Queue::traversing(){
     }
 
     cout << "\nCola de impresion: " << endl;
-        
-    for (int i = front; i != rear; i = forth(i)){
-        cout << "ID: " << buffer[i].id << " ||Dueño: " << buffer[i].owner << " ||Paginas: " << buffer[i].pages << endl;
+    
+    int i = front;  
+
+    if (full()) {
+        cout << "ID: " << buffer[i].id << " ||Propietario: " << buffer[i].owner << " ||Paginas: " << buffer[i].pages << endl;
+        i = forth(i); 
+    }
+    
+    for (i; i != rear; i = forth(i)){
+        cout << "ID: " << buffer[i].id << " ||Propietario: " << buffer[i].owner << " ||Paginas: " << buffer[i].pages << endl;
     }
 }
 
 void Queue::EstadoBuffer(){
+    
+    cout << "\nEstado del buffer: " << endl;
     cout << "Capacidad del buffer: " << n << endl;
     cout << "Trabajos pendientes: " << s << endl;
 }
