@@ -25,6 +25,11 @@ int main(int argc, const char *argv[]){
         
         switch (opcion){
             case 1: {
+                if (cola.full()){
+                    cout << "\nLa cola esta llena" << endl;
+                    break;
+                }
+                else{
                 trabajo t;
                 
                 cout << "ID del trabajo: ";
@@ -33,12 +38,12 @@ int main(int argc, const char *argv[]){
 
                 cout << "Nombre del propietario: ";
                 cin >> t.owner;
-                //getline(cin, t.owner);
-
+                
                 cout << "Numero de paginas: ";
                 cin >> t.pages;
                 
                 cola.enqueue(t);
+                }
                 break;
             }
 
