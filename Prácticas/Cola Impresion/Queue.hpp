@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 struct trabajo {
     int id;
     string owner;
@@ -30,6 +29,7 @@ public:
     void enqueue(trabajo);
     void dequeue();
     void traversing();
+    int forth(int x);
     
     void EstadoBuffer();
 

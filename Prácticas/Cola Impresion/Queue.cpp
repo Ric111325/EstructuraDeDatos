@@ -9,18 +9,23 @@ Queue::Queue(int capacidad){
 }
 
 Queue::~Queue(){
-
+       
 }
 
-void Queue::enqueue(trabajo x){
+int Queue::forth (int i){
+
+    return (i + 1) % n;
+}
+
+void Queue::enqueue(trabajo t){
 
     if (full()){
-        cout << "Cola de impresion llena" << endl;
+        cout << "\nCola de impresion llena" << endl;
         return;
     }
 
-    buffer[rear] =  x;
-    rear = (rear + 1) % n;
+    buffer[rear] =  t;
+    rear = forth(rear);
    
     s++;
 }
@@ -32,31 +37,27 @@ void Queue::dequeue(){
         return;
     }
 
-    cout << "ID: " << buffer[front].id << "\n Dueño: " << buffer[front].owner << "\n Paginas: " << buffer[front].pages << endl;
+    cout << "ID: " << buffer[front].id << "\nDueño: " << buffer[front].owner << "\nPaginas: " << buffer[front].pages << endl;
     
-    front = (front + 1) % n;
+    front = forth(front);
     s--;
 }
-// nos "faltara" hacer el traversing  
-void Queue::traversing(){
 
-    if (empty()){
-        cout << "La cola esta vacia" << endl;
+void Queue::traversing(){
+    
+    if(empty()){
+        cout << "La cola esta vacia"<< endl;
         return;
     }
 
-    cout << "Cola de impresion: " << endl;
-    
-    for (int i = 0; i < s; i++){ 
+    cout << "\nCola de impresion: " << endl;
         
-        int posicion = (front + i) % n;
-        cout << "ID: " << buffer[posicion].id << " || Dueño: " << buffer[posicion].owner << " || Paginas: " << buffer[posicion].pages << endl;
+    for (int i = front; i != rear; i = forth(i)){
+        cout << "ID: " << buffer[i].id << " ||Dueño: " << buffer[i].owner << " ||Paginas: " << buffer[i].pages << endl;
     }
-
 }
 
 void Queue::EstadoBuffer(){
-    
     cout << "Capacidad del buffer: " << n << endl;
     cout << "Trabajos pendientes: " << s << endl;
 }
