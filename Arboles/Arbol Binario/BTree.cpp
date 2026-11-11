@@ -28,6 +28,7 @@ void btree::ins(int x){ // Inserta de manera ordenada cada dato nuevo, sin embar
     if (empty()){
         
         start = new node(x);
+        return;
     }
     else{
     

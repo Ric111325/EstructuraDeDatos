@@ -60,52 +60,53 @@ int *merge (int *a, int n, int *b, int m){ //Mezcla dos arreglos ordenados en un
 
 void MergeSort(int *a, int n){
     
-    if (n > 1){
+    if (n > 1){ // 1 If n > 1 then
 
-        int k = n / 2;
+        int k = n / 2; // 2 k <- [n/2]
 
+        // 3 Lambda1 <- a1, a2 ... ak
         int *b = new int[k];
-
         for (int i = 0; i < k; i++){
             b[i] = a[i];
         }
-        print(b,k);
-
-        int *c = new int[n - k];
         
+        // 4 Lambda2 <- ak+1, ak+2 ... an
+        int *c = new int[n - k]; 
         for (int i = 0; i < n - k; i++){
             c[i] = a[k + i];
         }
-        print (c,n-k);
 
-        MergeSort(b, k);
-        MergeSort(c, n - k);
+        MergeSort(b, k); // 5 mergesort(Lambda1)
+        MergeSort(c, n - k); // 6 mergesort(Lambda2)
 
+        // 7 Lambda <- merge(Lambda1, Lambda2)
         int *d = merge(b, k, c, n - k);
-        print(d,n);
-
         for (int i = 0; i < n; i++) {
             a[i] = d[i];
         }
-    }  
 
-        
-
+        delete[] b;
+        delete[] c;
+        delete[] d;
+    }// end if
 }
 
 int main(int argc, char const *argv[]){
 
-    srand ((unsigned) time(nullptr));
+    int n; 
+    cout << "Ingresa el tamaño del arreglo: " << endl;
+    cin >> n;
 
-    int min = 4;
-    int max = 7;
-
-    int n = rand() % (max -( min - 1)) + min;
     int *a = new int[n];
     init(a, n);
     
-    cout << "Arreglo a: "; print(a, n);
-
+    cout << "Arreglo: ";
+    print(a, n);
+    
     MergeSort(a,n);
+    cout << "Arreglo ordenado:" << endl ;
+    print(a,n);
+
+    delete[] a;
     return 0;
 }
