@@ -2,6 +2,7 @@
 // ordena cada una de ellas y luego las mezcla en un arreglo ordenado
 
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -65,18 +66,29 @@ void MergeSort(int *a, int n){
 
         int *b = new int[k];
 
-        for (int i = 0; i <= k; i++){
+        for (int i = 0; i < k; i++){
             b[i] = a[i];
         }
         print(b,k);
 
         int *c = new int[n - k];
         
-        for (int i = 0; i < n-k; i++){
-            c[i] = a[i];
+        for (int i = 0; i < n - k; i++){
+            c[i] = a[k + i];
         }
-        print (b,n-k);
+        print (c,n-k);
+
+        MergeSort(b, k);
+        MergeSort(c, n - k);
+
+        int *d = merge(b, k, c, n - k);
+        print(d,n);
+
+        for (int i = 0; i < n; i++) {
+            a[i] = d[i];
+        }
     }  
+
         
 
 }
@@ -86,7 +98,7 @@ int main(int argc, char const *argv[]){
     srand ((unsigned) time(nullptr));
 
     int min = 4;
-    int max = 10;
+    int max = 7;
 
     int n = rand() % (max -( min - 1)) + min;
     int *a = new int[n];
