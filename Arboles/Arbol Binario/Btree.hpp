@@ -30,10 +30,17 @@ class btree{
     };
 
     void traversal(node *);
+    void traversalRev(node *);
     node *start; // Apuntador del inicio
 
     int n; // Capacidad
     int s; // Tamaño
+
+    void preorder(node *);
+    void inorder(node *);
+    void postorder(node *);
+
+    void del(node *);
 public:
 
     btree(int);
@@ -41,7 +48,19 @@ public:
 
     void ins(int);
     void print(){ traversal(start); }
+    void printRev(){ traversalRev(start); } // Imprime en reversa
 
+    void print3(){ //imprime un traversal de cada tipo
+        
+        cout << "Preorder:   ";
+        preorder(start);
+
+        cout << "\nInorder:   ";
+        inorder(start);
+
+        cout << "\nPostorder:   ";
+        postorder(start);
+    }
     bool full() const {return n == s;}
     bool empty() const {return s == 0;} 
 
